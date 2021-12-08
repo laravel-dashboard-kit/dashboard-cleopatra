@@ -9,7 +9,7 @@
     "dev": "gulp",
     "build": "gulp build",
     "git": "git add . && git commit -m",
-    "postgit": "git push -u origin master && git subtree push --prefix dist origin gh-pages"    
+    "postgit": "git push -u origin master && git subtree push --prefix dist origin gh-pages"
   },
   "options": {
     "config": {
@@ -24,10 +24,10 @@
         "img": "./src/img"
       },
       "dist": {
-        "base": "./dist",
-        "css": "./dist/css",
-        "js": "./dist/js",
-        "img": "./dist/img"
+        "base": "./public/assets",
+        "css": "./public/assets/css",
+        "js": "./public/assets/js",
+        "img": "./public/assets/img"
       },
       "build": {
         "base": "./build",

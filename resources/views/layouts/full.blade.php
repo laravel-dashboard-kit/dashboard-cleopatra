@@ -2,19 +2,17 @@
 
 @section('body')
 
-    <body>
+    <body class="bg-gray-100">
         @include('dashboard-cleopatra::partials.loader')
 
-        <div class="for-loader">
-            <div id="app">
-                @include('dashboard-cleopatra::areas.full.main-header')
+        @include('dashboard-cleopatra::areas.full.main-header')
 
-                @include('dashboard-cleopatra::areas.full.main-sidebar')
+        <div class="h-screen flex flex-row flex-wrap">
+            @include('dashboard-cleopatra::areas.full.main-sidebar')
 
-                @include('dashboard-cleopatra::areas.full.content')
+            @include('dashboard-cleopatra::areas.full.content')
 
-                @yield('modals')
-            </div>
+            @yield('modals')
         </div>
 
         @include('dashboard-cleopatra::partials.footer')

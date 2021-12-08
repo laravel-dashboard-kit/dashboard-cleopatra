@@ -1,1 +1,1 @@
-<div class="loader">Loading...</div>
+{{-- empty --}}
