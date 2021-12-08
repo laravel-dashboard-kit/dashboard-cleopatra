@@ -1,0 +1,39 @@
+{
+  "name": "LDK/dashboard-cleopatra",
+  "description": "Cleopatra dashboard",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Amr Khaled",
+      "email": "i@akhaled.com"
+    }
+  ],
+  "require": {
+    "laravel-dashboard-kit/dashboard-abstract": "^1.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^6.0",
+    "orchestra/canvas": "^6.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "LDK\\DashboardCleopatra\\": "src",
+      "LDK\\DashboardCleopatra\\Database\\Factories\\": "database/factories",
+      "LDK\\DashboardCleopatra\\Database\\Seeders\\": "database/seeders/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "LDK\\DashboardCleopatra\\Providers\\DashboardCleopatraServiceProvider"
+      ]
+    }
+  },
+  "scripts": {
+    "test": "./vendor/bin/phpunit --testdox",
+    "test-f": "./vendor/bin/phpunit --testdox --filter",
+    "post-autoload-dump": [
+      "@php ./vendor/bin/testbench package:discover --ansi"
+    ]
+  }
+}
