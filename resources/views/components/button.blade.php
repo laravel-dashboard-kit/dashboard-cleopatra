@@ -1,4 +1,35 @@
 @php
+$class = '';
+
+if ($attributes->get('disabled')) {
+    $class = 'disabled btn-gray';
+} else {
+    $class = $attributes->get('color') ? 'btn-' . $attributes->get('color') : 'btn';
+}
+@endphp
+
+@if ($attributes->get('href'))
+    <a {{ $attributes->except('class')->merge([
+        'href' => '#',
+    ]) }}
+        @class([$class])>
+        <x-dashboard-flex class="gap-1">
+            {!! $slot ?? __('Click') !!}
+        </x-dashboard-flex>
+    </a>
+@else
+    <button {{ $attributes->except('class')->merge([
+        'type' => 'button',
+    ]) }}
+        @class([$class])>
+        <x-dashboard-flex class="gap-1">
+            {!! $slot ?? __('Click') !!}
+        </x-dashboard-flex>
+    </button>
+@endif
+
+
+{{-- @php
 $class = 'btn ' . 'btn-' . $attributes->get('size', 'normal') . ' btn-' . $attributes->get('expand', 'normal');
 
 if ($attributes->get('disabled')) {
@@ -10,7 +41,6 @@ if ($attributes->get('disabled')) {
         $class .= 'outline-';
     }
 
-    $class .= $attributes->get('color', 'primary');
 }
 
 if ($attributes->get('display')) {
@@ -24,19 +54,4 @@ if ($attributes->get('display')) {
     'class' => $class,
 ]) }}>
         {!! $slot ?? __('Disabled') !!}
-    </button>
-@elseif ($attributes->get('href'))
-    <a {{ $attributes->merge([
-    'href' => '#',
-    'class' => $class,
-]) }}>
-        {!! $slot ?? 'Click' !!}
-    </a>
-@else
-    <button {{ $attributes->merge([
-    'type' => 'button',
-    'class' => $class,
-]) }}>
-        {!! $slot ?? __('Click') !!}
-    </button>
-@endif
+    </button> --}}

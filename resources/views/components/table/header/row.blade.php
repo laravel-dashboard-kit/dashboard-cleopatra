@@ -1,3 +1,3 @@
-<tr {{ $attributes->merge(['class' => 'bold']) }}>
+<tr {{ $attributes->merge(['class' => '']) }}>
     {!! $slot !!}
 </tr>

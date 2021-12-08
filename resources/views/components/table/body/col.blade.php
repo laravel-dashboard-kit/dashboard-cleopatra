@@ -1,7 +1,7 @@
-<td {{ $attributes }}
-    style="overflow: hidden;
-white-space: nowrap;
-text-overflow: ellipsis;
-max-width: 0;">
+<td {{ $attributes->except('class')->merge([]) }}
+    @class([
+        'border px-4 py-2 ' . dashboard_rtl("border-l-0", "border-l-0"),
+        dashboard_rtl('border-l-0', 'border-r-0') => isset($last) && $last
+    ])>
     {!! $slot !!}
 </td>

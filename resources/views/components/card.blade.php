@@ -21,7 +21,27 @@ if (isset($footer)) {
 }
 @endphp
 
-<div {{ $attributes->merge([
+<div class="card" dir="{{ dashboard_rtl('rtl', 'ltr') }}">
+    @isset($header)
+        <div @class([
+            "card-header
+                    bg-" . $attributes->get('header-bg'),
+            // "text-white" => in_array($attributes->get('header-bg', 'gray-200'), ['primary'])
+        ])>
+            {!! $header !!}
+        </div>
+    @endisset
+
+    {!! $slot !!}
+
+    @isset($footer)
+        <div class="card-footer bg-{{ $attributes->get('footer-bg') }}">
+            {!! $footer !!}
+        </div>
+    @endisset
+</div>
+
+{{-- <div {{ $attributes->merge([
     'class' => $classes,
 ]) }}>
     @if ($attributes->get('image'))
@@ -30,16 +50,6 @@ if (isset($footer)) {
             class="IE-H-100">
     @endif
 
-    @isset($header)
-        <div @class(["card-header
-            tx-medium
-            bd-0
-            bg-".$attributes->get('header-bg', 'gray-200'),
-            "text-white" => in_array($attributes->get('header-bg', 'gray-200'), ['primary'])
-            ])>
-            {!! $header !!}
-        </div>
-    @endisset
 
     <div class="{{ $card_body_classes }}">
         @if ($attributes->get('title'))
@@ -51,13 +61,7 @@ if (isset($footer)) {
 
         <div @class([ "mt-3"=> $attributes->get('subtitle') || $attributes->get('title')
             ])>
-            {!! $slot !!}
+
         </div>
     </div>
-
-    @isset($footer)
-        <div class="card-header tx-medium bd-0 text-white bg-{{ $attributes->get('footer-bg') }}">
-            {!! $footer !!}
-        </div>
-    @endisset
-</div>
+</div> --}}

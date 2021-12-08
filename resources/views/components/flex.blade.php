@@ -1,9 +1,10 @@
 @php
-    $classes = "d-flex justify-content-{$attributes->get('x', 'between')} align-items-{$attributes->get('y', 'center')}";
+    $classes = "flex justify-{$attributes->get('x', 'between')} items-{$attributes->get('y', 'center')}";
 @endphp
 
 <div {{ $attributes->merge([
     'class' => $classes,
+    'dir' => dashboard_rtl('rtl', 'ltr')
 ]) }}>
     {!! $slot !!}
 </div>

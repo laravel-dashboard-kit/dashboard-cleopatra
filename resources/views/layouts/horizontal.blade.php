@@ -8,9 +8,11 @@
         @include('dashboard-cleopatra::areas.horizontal.main-header')
 
         <div class="h-screen flex flex-row flex-wrap">
-            @include('dashboard-cleopatra::areas.horizontal.content')
+            <x-dashboard-container>
+                @include('dashboard-cleopatra::areas.horizontal.content')
 
-            @yield('modals')
+                @yield('modals')
+            </x-dashboard-container>
         </div>
 
         @include('dashboard-cleopatra::partials.footer')
