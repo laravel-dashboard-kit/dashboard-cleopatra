@@ -1,7 +1,7 @@
 preset: package
 
 namespace: LDK\DashboardCleopatra
-user-auth-provider: App\User
+user-auth-provider: App\Models\User
 
 paths:
   src: src

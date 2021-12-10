@@ -26,31 +26,31 @@
     {{-- navbar content --}}
     <div id="navbar"
         class="animated lg:hidden lg:fixed lg:top-0 lg:w-full lg:left-0 lg:mt-16 lg:border-t lg:border-b lg:border-gray-200 lg:p-10 lg:pb-5 lg:bg-white flex-1 pl-3 flex flex-row flex-wrap justify-between items-center lg:flex-col lg:items-center">
-        {{-- left --}}
-        {{-- <div
-            class="text-gray-600 lg:w-full lg:flex lg:flex-row lg:justify-evenly lg:pb-10 lg:mb-10 lg:border-b lg:border-gray-200"> --}}
-        {{-- <a class="mr-2 transition duration-500 ease-in-out hover:text-gray-900"
-                href="#"
-                title="email"><i class="fad fa-check-circle"></i></a> --}}
-        {{-- </div> --}}
-        {{-- end left --}}
 
-        {{-- start center --}}
+        {{-- start navbar --}}
         <div
             class="flex flex-row justify-between items-center gap-4 lg:w-full lg:flex lg:flex-col lg:justify-evenly lg:pb-5 lg:mb-5 lg:border-b lg:border-gray-500 lg:gap-0 lg:items-end">
             @foreach (config('dashboard-ui.nav') as $parent)
                 @if (isset($parent['items']) && is_array($parent['items']))
-                    <x-dashboard-dropdown :title="__($parent['title'])">
+                    <x-dashboard-dropdown :title="__($parent['title'])"
+                        :active="count(array_filter(Arr::pluck($parent['items'], 'active'))) > 0">
                         @foreach ($parent['items'] ?? [] as $child)
                             <x-dashboard-dropdown-item :href="$child['url']"
+                                :active="$child['active'] ?? false"
                                 :hideHr="$loop->last">
                                 {{ __($child['title']) }}
                             </x-dashboard-dropdown-item>
                         @endforeach
                     </x-dashboard-dropdown>
                 @else
-                    <a class="text-gray-500 menu-btn p-0 m-0 hover:text-gray-900 focus:text-gray-900 focus:outline-none transition-all ease-in-out duration-300"
-                        href="{{ $parent['url'] }}">
+                    <a href="{{ $parent['url'] }}"
+                        @class([
+                            'menu-btn p-0 m-0 focus:outline-none transition-all ease-in-out duration-300',
+                            'text-gray-500 hover:text-gray-900 focus:text-gray-900' =>
+                                !isset($parent['active']) || !$parent['active'],
+                            'text-indigo-600 hover:text-indigo-900 focus:text-indigo-900' =>
+                                isset($parent['active']) && $parent['active'],
+                        ])>
                         <span>{{ __($parent['title']) }}</span>
                     </a>
                 @endif
@@ -60,11 +60,11 @@
                 @endunless
             @endforeach
         </div>
-        {{-- end center --}}
+        {{-- end navbar --}}
+
 
         {{-- right --}}
         <div class="flex flex-row-reverse items-center">
-
             {{-- user --}}
             <x-dashboard-dropdown>
                 <x-slot name="custom">
@@ -89,6 +89,13 @@
                 </x-dashboard-dropdown-item>
             </x-dashboard-dropdown>
             {{-- end user --}}
+
+            @isset($navbarExtra)
+                <div
+                    class="text-gray-600 lg:w-full lg:flex lg:flex-row lg:justify-evenly lg:pb-10 lg:mb-10 lg:border-b lg:border-gray-200 {{ dashboard_rtl('ml-10', 'mr-10') }}">
+                    {!! $navbarExtra !!}
+                </div>
+            @endisset
         </div>
         {{-- end right --}}
     </div>
