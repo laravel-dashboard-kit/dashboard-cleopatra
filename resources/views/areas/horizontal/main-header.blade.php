@@ -3,15 +3,12 @@
 
     {{-- logo --}}
     <div class="flex-none w-56 flex flex-row items-center">
-        <a href="{{ config('dashboard-ui.url.home') }}"
-            class="flex flex-row items-center"">
+        <a href="{{ config('dashboard-ui.url.home') }}">
             <img src="
             {{ config('dashboard-ui.logo.default') }}"
-            width="150"
-            height="150"
-            class="w-10 flex-none">
-
-            <strong class="capitalize ml-1 flex-1">cleopatra</strong>
+                width="150"
+                height="150"
+                class="w-10 flex-none">
         </a>
     </div>
     {{-- end logo --}}
