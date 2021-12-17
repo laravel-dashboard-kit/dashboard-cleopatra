@@ -1,58 +1,57 @@
 @php
 $id = \Str::of($attributes->get('name', null) . \Str::random(10))->slug();
-$formGroupClasses = 'form-group';
-
-if ($attributes->get('inset')) {
-    $formGroupClasses = ' mb-0';
-}
 @endphp
 
-<div class="{{ $formGroupClasses }} @error($attributes->get('name')) has-danger @enderror"
-    @if ($attributes->get('dir'))
-    dir="{{ $attributes->get('dir') }}"
-    @endif>
+{{-- @error($attributes->get('name')) has-danger @enderror" --}}
+{{-- $attributes->get('inset') --}}
+<div @class(['px-4 my-6 w-full'])
+    dir="{{ dashboard_rtl('rtl', 'ltr') }}">
 
     @unless($attributes->get('hide-label'))
         @include('dashboard-cleopatra::components.form.label')
     @endunless
 
-    <div class="input-group input-group-merge">
+    <div class="">
         @isset($before)
-            <div class="input-group-prepend">
-                <div class="input-group-text">
+            <div class="">
+                <div class="">
                     {!! $before !!}
                 </div>
             </div>
         @endisset
 
         @if ($attributes->get('icon-before'))
-            <div class="input-group-prepend">
-                <div class="input-group-text">
+            <div class="">
+                <div class="">
                     @svg($attributes->get('icon-before'))
                 </div>
             </div>
         @endif
 
         <input
-            {{ $attributes->merge([
-    'type' => 'text',
-    'class' => 'form-control',
-    'id' => $id,
-    'placeholder' => $slot,
-    'value' => is_string($attributes->get('name')) ? old($attributes->get('name')) : '',
-]) }} />
+            {{ $attributes->except(['class', 'value'])->merge([
+                'type' => 'text',
+                'id' => $id,
+                'placeholder' => $slot,
+                'value' => is_string($attributes->get('name')) && strlen(old($attributes->get('name'))) > 0 ? old($attributes->get('name')) : $attributes->get('value'),
+            ]) }}
+            @class([
+                'block w-full rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50',
+                'border-gray-300' => !$errors->has($attributes->get('name')),
+                'border-red-500' => $errors->has($attributes->get('name')),
+            ]) />
 
         @isset($after)
-            <div class="input-group-append">
-                <div class="input-group-text">
+            <div class="">
+                <div class="">
                     {!! $after !!}
                 </div>
             </div>
         @endisset
 
         @if ($attributes->get('icon-after'))
-            <div class="input-group-append">
-                <div class="input-group-text">
+            <div class="">
+                <div class="">
                     @svg($attributes->get('icon-after'))
                 </div>
             </div>
@@ -60,11 +59,11 @@ if ($attributes->get('inset')) {
     </div>
 
     @isset($mask)
-        <small class="form-text text-muted">{!! $mask !!}</small>
+        <small class="">{!! $mask !!}</small>
     @endisset
 
     @error($attributes->get('name'))
-        <div class="text-danger">
+        <div class="text-red-500">
             {{ $message }}
         </div>
     @enderror
