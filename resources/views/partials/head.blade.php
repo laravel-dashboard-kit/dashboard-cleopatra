@@ -2,7 +2,7 @@
     @include('dashboard-abstract::include.head')
 
     <link rel="shortcut icon"
-        href="{{ asset('assets/dashboard/cleopatra/img/fav.png') }}"
+        href="{{ asset(config('dashboard-ui.logo.favicon')) }}"
         type="image/x-icon">
     <link rel="stylesheet"
         href="https://kit-pro.fontawesome.com/releases/v5.12.1/css/pro.min.css">
