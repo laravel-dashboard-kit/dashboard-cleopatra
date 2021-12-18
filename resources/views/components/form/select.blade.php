@@ -22,7 +22,6 @@ if ($attributes->get('inset')) {
     'class' => 'form-control',
 ]) }}>
 
-                <option {{!$attributes->get('value') ? 'selected' : ''}} >{{$attributes->get('desc','أختر') }}</option>
                 @foreach($items as $item)
                 <option {{$attributes->get('value') == $item->id ? 'selected' : ''}} value="{{$item->id}}">{{$item->title}}</option>
                 @endforeach
