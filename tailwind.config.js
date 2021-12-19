@@ -1,12 +1,15 @@
 module.exports = {
+  content: [
+    "./resources/views/**/*.php",
+    "./resources/html/**/*.html",
+    "./resources/**/.*js",
+  ],
+  safelist: ["lg:w-96"],
   theme: {
     screens: {
       sm: { max: "639px" },
-
       md: { max: "767px" },
-
       lg: { max: "1023px" },
-
       xl: { max: "1279px" },
     },
     fontFamily: {
@@ -20,17 +23,16 @@ module.exports = {
       },
     },
     container: {
-      padding: {
-        DEFAULT: "1rem",
-        sm: "2rem",
-        lg: "4rem",
-        xl: "5rem",
-        "2xl": "6rem",
+      center: true,
+      screens: {
+        sm: "100%",
+        md: "100%",
+        lg: "1280px",
       },
     },
   },
-  variants: {},
   plugins: [
+    require('@tailwindcss/forms'),
     require("tailwindcss-animatecss")({
       settings: {
         animatedSpeed: 1000,

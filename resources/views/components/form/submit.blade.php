@@ -1,11 +1,10 @@
-<x-dashboard-button
-    {{ $attributes->merge([
+<x-dashboard-button {{ $attributes->merge([
     'type' => 'submit',
-    'color' => 'primary'
+    'color' => 'indigo',
 ]) }}>
     @if (strlen($slot) > 0)
         {!! $slot !!}
     @else
-        Submit
+        حفظ
     @endif
 </x-dashboard-button>
