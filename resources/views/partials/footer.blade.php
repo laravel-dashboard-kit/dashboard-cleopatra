@@ -5,4 +5,7 @@
 
 @stack('script')
 @stack('scripts')
+<script>
+    CKEDITOR.replace( 'editor1' );
+</script>
 @stack('footer')
