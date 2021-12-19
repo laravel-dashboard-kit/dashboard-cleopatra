@@ -4,11 +4,10 @@
     {{-- logo --}}
     <div class="flex-none w-56 flex flex-row items-center">
         <a href="{{ config('dashboard-ui.url.home') }}">
-            <img src="
-            {{ config('dashboard-ui.logo.default') }}"
-                width="150"
-                height="150"
-                class="w-10 flex-none">
+            <img class="flex-none"
+                src="{{ config('dashboard-ui.logo.default') }}"
+                width="100"
+                height="100">
         </a>
     </div>
     {{-- end logo --}}
