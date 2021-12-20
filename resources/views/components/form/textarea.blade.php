@@ -39,8 +39,7 @@ $id = $attributes->get('name', null) . \Str::random(10);
             CKEDITOR.config.allowedContent = true;
             CKEDITOR.config.extraAllowedContent = 'p(mso*,Normal)';
             CKEDITOR.config.pasteFilter = null;
-            CKEDITOR.config.filebrowserBrowseUrl = "/hello-word";
-            CKEDITOR.config.filebrowserUploadUrl = "/tmp";
+            CKEDITOR.config.filebrowserUploadUrl = "{{ route('tenant.dashboard.upload') }}";
         </script>
     @endpush
 @endif
