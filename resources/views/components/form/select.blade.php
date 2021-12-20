@@ -2,32 +2,10 @@
 $id = \Str::of($attributes->get('name', null) . \Str::random(10))->slug();
 @endphp
 
-<<<<<<< HEAD
-<div class="{{ $formGroupClasses }} @error($attributes->get('name')) has-danger @enderror"
-    @if ($attributes->get('dir'))
-    dir="{{ $attributes->get('dir') }}"
-    @endif>
-
-    @unless($attributes->get('hide-label'))
-        @include('dashboard-cleopatra::components.form.label')
-    @endunless
-
-
-            <select {{ $attributes->merge([
-    'class' => 'form-control',
-]) }}>
-
-                @foreach($items as $item)
-                <option {{$attributes->get('value') == $item->id ? 'selected' : ''}} value="{{$item->id}}">{{$item->title}}</option>
-                @endforeach
-            </select>
-
-=======
 {{-- @error($attributes->get('name')) has-danger @enderror" --}}
 {{-- $attributes->get('inset') --}}
 <div @class(['px-4 my-6 w-full'])
     dir="{{ dashboard_rtl('rtl', 'ltr') }}">
->>>>>>> 8da2543b6efa0537860bc0e037be57a594963e21
 
     @isset($label)
         <x-dashboard-form-label :id="$id"
