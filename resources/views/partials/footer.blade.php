@@ -6,6 +6,10 @@
 @stack('script')
 @stack('scripts')
 <script>
-    CKEDITOR.replace( 'editor1' );
+    ClassicEditor
+        .create( document.querySelector( '#editor1' ) )
+        .catch( error => {
+            console.error( error );
+        } );
 </script>
 @stack('footer')

@@ -9,7 +9,7 @@
     <link rel="stylesheet"
         type="text/css"
         href="{{ asset('assets/dashboard/cleopatra/css/style.css') }}">
-    <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>
 
     @stack('head')
     @stack('head-js')
