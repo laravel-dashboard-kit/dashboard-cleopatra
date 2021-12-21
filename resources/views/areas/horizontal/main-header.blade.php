@@ -58,9 +58,8 @@
         </div>
         {{-- end navbar --}}
 
-
-        {{-- right --}}
-        <div class="flex flex-row-reverse items-center">
+        {{-- left --}}
+        <div class="lg:flex lg:flex-row-reverse items-center">
             {{-- user --}}
             <x-dashboard-dropdown>
                 <x-slot name="custom">
@@ -88,7 +87,7 @@
 
             @isset($navbarExtra)
                 <div
-                    class="text-gray-600 lg:w-full lg:flex lg:flex-row lg:justify-evenly lg:pb-10 lg:mb-10 lg:border-b lg:border-gray-200 {{ dashboard_rtl('ml-10', 'mr-10') }}">
+                    class="text-gray-600 lg:w-full lg:flex lg:flex-row lg:justify-evenly lg:pb-10 lg:mb-10 lg:border-b lg:border-gray-200 mt-2 lg:mt-0 {{ dashboard_rtl('lg:ml-10', 'lg:mr-10') }}">
                     {!! $navbarExtra !!}
                 </div>
             @endisset
