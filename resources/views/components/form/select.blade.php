@@ -1,3 +1,5 @@
+@props(['items', 'label', 'selected'])
+
 @php
 $id = \Str::of($attributes->get('name', null) . \Str::random(10))->slug();
 @endphp
@@ -19,14 +21,14 @@ $id = \Str::of($attributes->get('name', null) . \Str::random(10))->slug();
             'type' => 'text',
             'id' => $id,
             'placeholder' => $slot,
-            'value' => is_string($attributes->get('name')) ? old($attributes->get('name')) : '',
         ]) }}
         @class([
             'block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50',
         ])>
         @isset($items)
             @foreach ($items as $value => $item)
-                <option value="{{ $value }}">{{ $item }}</option>
+                <option value="{{ $value }}"
+                    {{ $selected == $value ? 'selected' : '' }}>{{ $item }}</option>
             @endforeach
         @else
             {!! $slot !!}

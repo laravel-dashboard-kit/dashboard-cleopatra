@@ -10,6 +10,13 @@
         type="text/css"
         href="{{ asset('assets/dashboard/cleopatra/css/style.css') }}">
 
+    <style>
+        select {
+            background-position: {{ dashboard_rtl('left', 'right') }} 0.5rem center;
+        }
+
+    </style>
+
     @stack('head')
     @stack('head-js')
 </head>
