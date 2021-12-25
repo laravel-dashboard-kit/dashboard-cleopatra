@@ -1,4 +1,11 @@
-<div class="alert alert-{{ $attributes->get('color', 'danger') }} {{ $attributes->get('dismissible') ? 'alert-dismissible' : '' }}"
+<div {{ $attributes->except('class') }}
+    @class([
+        'alert text-white bg-' .
+        $attributes->get('color', 'red-400') .
+        ' ' .
+        ($attributes->get('dismissible') ? 'alert-dismissible ' : ' ') .
+        $attributes->get('class'),
+    ])
     role="alert">
     <x-dashboard-flex x="between">
         <x-dashboard-flex>

@@ -1,17 +1,21 @@
 @php
-$id = \Str::of($attributes->get('name', null) . \Str::random(10))->slug();
+$id = Str::of($attributes->get('name', null) . \Str::random(10))->slug();
+$inline_inputs = ['color', 'checkbox'];
 @endphp
 
 {{-- @error($attributes->get('name')) has-danger @enderror" --}}
 {{-- $attributes->get('inset') --}}
-<div @class(['px-4 my-6 w-full'])
+<div @class([
+    'px-4 my-6 w-full',
+    'flex items-center gap-2' => in_array($attributes->get('type'), $inline_inputs),
+])
     dir="{{ dashboard_rtl('rtl', 'ltr') }}">
 
     @unless($attributes->get('hide-label'))
         @include('dashboard-cleopatra::components.form.label')
     @endunless
 
-    <div class="">
+    <div @class([])>
         @isset($before)
             <div class="">
                 <div class="">
@@ -36,9 +40,10 @@ $id = \Str::of($attributes->get('name', null) . \Str::random(10))->slug();
                 'value' => is_string($attributes->get('name')) && strlen(old($attributes->get('name'))) > 0 ? old($attributes->get('name')) : $attributes->get('value'),
             ]) }}
             @class([
-                'block w-full rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50',
+                'block rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50',
                 'border-gray-300' => !$errors->has($attributes->get('name')),
                 'border-red-500' => $errors->has($attributes->get('name')),
+                'w-full' => !in_array($attributes->get('type'), $inline_inputs),
             ]) />
 
         @isset($after)

@@ -1,5 +1,5 @@
 <div {{ $attributes->merge([
-    'class' => 'row row-sm',
+    'class' => 'grid',
 ]) }}>
     {!! $slot !!}
 </div>
