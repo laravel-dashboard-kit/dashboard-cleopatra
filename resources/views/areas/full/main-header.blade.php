@@ -145,7 +145,7 @@
                             <i class="fad fa-birthday-cake text-sm"></i>
                         </div>
 
-                        <div class="flex-1 flex flex-rowbg-green-100">
+                        <div class="flex-1 flex flex-row bg-green-100">
                             <div class="flex-1">
                                 <h1 class="text-sm font-semibold">poll..</h1>
                                 <p class="text-xs text-gray-500">text here also</p>
@@ -167,7 +167,7 @@
                             <i class="fad fa-user-circle text-sm"></i>
                         </div>
 
-                        <div class="flex-1 flex flex-rowbg-green-100">
+                        <div class="flex-1 flex flex-row bg-green-100">
                             <div class="flex-1">
                                 <h1 class="text-sm font-semibold">mohamed..</h1>
                                 <p class="text-xs text-gray-500">text here also</p>
@@ -189,7 +189,7 @@
                             <i class="fad fa-images text-sm"></i>
                         </div>
 
-                        <div class="flex-1 flex flex-rowbg-green-100">
+                        <div class="flex-1 flex flex-row bg-green-100">
                             <div class="flex-1">
                                 <h1 class="text-sm font-semibold">new imag..</h1>
                                 <p class="text-xs text-gray-500">text here also</p>
@@ -211,7 +211,7 @@
                             <i class="fad fa-alarm-exclamation text-sm"></i>
                         </div>
 
-                        <div class="flex-1 flex flex-rowbg-green-100">
+                        <div class="flex-1 flex flex-row bg-green-100">
                             <div class="flex-1">
                                 <h1 class="text-sm font-semibold">time is up..</h1>
                                 <p class="text-xs text-gray-500">text here also</p>
@@ -274,7 +274,7 @@
                                 alt="">
                         </div>
 
-                        <div class="flex-1 flex flex-rowbg-green-100">
+                        <div class="flex-1 flex flex-row bg-green-100">
                             <div class="flex-1">
                                 <h1 class="text-sm font-semibold">mohamed said</h1>
                                 <p class="text-xs text-gray-500">yeah i know</p>
@@ -298,7 +298,7 @@
                                 alt="">
                         </div>
 
-                        <div class="flex-1 flex flex-rowbg-green-100">
+                        <div class="flex-1 flex flex-row bg-green-100">
                             <div class="flex-1">
                                 <h1 class="text-sm font-semibold">sull goldmen</h1>
                                 <p class="text-xs text-gray-500">for sure</p>
@@ -322,7 +322,7 @@
                                 alt="">
                         </div>
 
-                        <div class="flex-1 flex flex-rowbg-green-100">
+                        <div class="flex-1 flex flex-row bg-green-100">
                             <div class="flex-1">
                                 <h1 class="text-sm font-semibold">mick</h1>
                                 <p class="text-xs text-gray-500">is typing ....</p>

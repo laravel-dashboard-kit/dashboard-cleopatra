@@ -3,6 +3,8 @@
         'alert text-white bg-' .
         $attributes->get('color', 'red-400') .
         ' ' .
+        ($attributes->get('color') == 'success' ? 'green-200' : '') .
+        ' ' .
         ($attributes->get('dismissible') ? 'alert-dismissible ' : ' ') .
         $attributes->get('class'),
     ])
