@@ -1,9 +1,9 @@
 <div {{ $attributes->except('class') }}
     @class([
-        'alert text-white bg-' .
-        $attributes->get('color', 'red-400') .
+        'alert text-white' .
+        $attributes->get('color', 'bg-red-400') .
         ' ' .
-        ($attributes->get('color') == 'success' ? 'green-200' : '') .
+        ($attributes->get('color') == 'success' ? 'bg-green-200' : '') .
         ' ' .
         ($attributes->get('dismissible') ? 'alert-dismissible ' : ' ') .
         $attributes->get('class'),
