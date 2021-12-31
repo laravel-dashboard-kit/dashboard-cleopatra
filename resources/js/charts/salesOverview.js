@@ -9,7 +9,7 @@ var sealsOptions = {
     },
     colors: ['#99C2A2', '#C5EDAC', '#66C7F4'],
     series: [
-      
+
       {
         name: 'Column A',
         type: 'column',
@@ -79,10 +79,10 @@ var sealsOptions = {
       offsetX: 40
     }
   };
-  
-  
 
 
-var sealsOverview = document.getElementById('sealsOverview');
-var sealsOverviewChart = new ApexCharts(sealsOverview, options('bar' , '100%', numArr(20,999) , '#30aba0')); 
-sealsOverviewChart.render();       
+
+
+// var sealsOverview = document.getElementById('sealsOverview');
+// var sealsOverviewChart = new ApexCharts(sealsOverview, options('bar' , '100%', numArr(20,999) , '#30aba0'));
+// sealsOverviewChart.render();

@@ -1,4 +1,4 @@
-var options = {     
+var options = {
     chart: {
     //   height: 280,
       width: '100%',
@@ -13,7 +13,7 @@ var options = {
             top: 0,
             right: 0,
             bottom: 0,
-            left: 0    
+            left: 0
         }
     },
     dataLabels: {
@@ -31,7 +31,7 @@ var options = {
         name: "serie2",
         data: [54, 45, 51, 57, 32, 33, 31, 31, 46, 37, 33]
     }
-    ],    
+    ],
     fill: {
       type: "gradient",
       gradient: {
@@ -45,31 +45,29 @@ var options = {
     stroke:{
         colors: ['#4fd1c5'],
         width: 3
-    },    
+    },
     yaxis: {
-        show: false,        
-    }, 
+        show: false,
+    },
     xaxis: {
       categories: [1, 2, 3, 4, 5, 6, 6, 7, 8, 9, 10],
       labels: {
           show: false,
-      },   
+      },
       axisBorder: {
-        show: false,        
-      },   
+        show: false,
+      },
       tooltip: {
           enabled: false,
       }
     },
-    
-  };
-  
 
-  var SummaryChart =  document.getElementById("SummaryChart");
-  
-  if (SummaryChart != null && typeof(SummaryChart) != 'undefined') {
-    var chart = new ApexCharts(document.querySelector("#SummaryChart"), options); 
-    chart.render();
-  }
-  
-   
+  };
+
+
+  // var SummaryChart =  document.getElementById("SummaryChart");
+
+  // if (SummaryChart != null && typeof(SummaryChart) != 'undefined') {
+  //   var chart = new ApexCharts(document.querySelector("#SummaryChart"), options);
+  //   chart.render();
+  // }

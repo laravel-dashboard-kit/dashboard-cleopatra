@@ -1,3 +1,5 @@
+[x-cloak] {
+  display: none !important; }
 
 @import url("https://fonts.googleapis.com/css?family=Ubuntu&display=swap");
 /*
@@ -1265,12 +1267,6 @@ div.code-toolbar .toolbar button:hover {
 .mt-4{
   margin-top: 1rem;
 }
-.ml-10{
-  margin-left: 2.5rem;
-}
-.mr-10{
-  margin-right: 2.5rem;
-}
 .mt-1{
   margin-top: 0.25rem;
 }
@@ -1303,6 +1299,9 @@ div.code-toolbar .toolbar button:hover {
 }
 .mt-6{
   margin-top: 1.5rem;
+}
+.ml-10{
+  margin-left: 2.5rem;
 }
 .mb-2{
   margin-bottom: 0.5rem;
@@ -1508,11 +1507,11 @@ div.code-toolbar .toolbar button:hover {
 .gap-1{
   gap: 0.25rem;
 }
-.gap-4{
-  gap: 1rem;
-}
 .gap-2{
   gap: 0.5rem;
+}
+.gap-4{
+  gap: 1rem;
 }
 .gap-5{
   gap: 1.25rem;
@@ -1590,6 +1589,10 @@ div.code-toolbar .toolbar button:hover {
   --tw-border-opacity: 1;
   border-color: rgb(153 246 228 / var(--tw-border-opacity));
 }
+.border-red-500{
+  --tw-border-opacity: 1;
+  border-color: rgb(239 68 68 / var(--tw-border-opacity));
+}
 .border-green-400{
   --tw-border-opacity: 1;
   border-color: rgb(74 222 128 / var(--tw-border-opacity));
@@ -1621,6 +1624,14 @@ div.code-toolbar .toolbar button:hover {
   --tw-border-opacity: 1;
   border-color: rgb(165 180 252 / var(--tw-border-opacity));
 }
+.bg-red-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
+}
+.bg-green-200{
+  --tw-bg-opacity: 1;
+  background-color: rgb(187 247 208 / var(--tw-bg-opacity));
+}
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1632,6 +1643,10 @@ div.code-toolbar .toolbar button:hover {
 .bg-teal-100{
   --tw-bg-opacity: 1;
   background-color: rgb(204 251 241 / var(--tw-bg-opacity));
+}
+.bg-green-100{
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 252 231 / var(--tw-bg-opacity));
 }
 .bg-indigo-300{
   --tw-bg-opacity: 1;
@@ -1689,10 +1704,6 @@ div.code-toolbar .toolbar button:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(199 210 254 / var(--tw-bg-opacity));
 }
-.bg-red-400{
-  --tw-bg-opacity: 1;
-  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
-}
 .bg-indigo-600{
   --tw-bg-opacity: 1;
   background-color: rgb(79 70 229 / var(--tw-bg-opacity));
@@ -1712,10 +1723,6 @@ div.code-toolbar .toolbar button:hover {
 .bg-pink-600{
   --tw-bg-opacity: 1;
   background-color: rgb(219 39 119 / var(--tw-bg-opacity));
-}
-.bg-green-200{
-  --tw-bg-opacity: 1;
-  background-color: rgb(187 247 208 / var(--tw-bg-opacity));
 }
 .bg-red-200{
   --tw-bg-opacity: 1;
@@ -4879,6 +4886,15 @@ div.code-toolbar .toolbar button:hover {
   .lg\:mb-10{
     margin-bottom: 2.5rem;
   }
+  .lg\:mt-0{
+    margin-top: 0px;
+  }
+  .lg\:ml-10{
+    margin-left: 2.5rem;
+  }
+  .lg\:mr-10{
+    margin-right: 2.5rem;
+  }
   .lg\:mr-0{
     margin-right: 0px;
   }
@@ -4914,6 +4930,9 @@ div.code-toolbar .toolbar button:hover {
   }
   .lg\:flex-row{
     flex-direction: row;
+  }
+  .lg\:flex-row-reverse{
+    flex-direction: row-reverse;
   }
   .lg\:flex-col{
     flex-direction: column;

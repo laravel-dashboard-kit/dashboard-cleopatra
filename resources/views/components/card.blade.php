@@ -21,18 +21,22 @@ if (isset($footer)) {
 }
 @endphp
 
-<div class="card" dir="{{ dashboard_rtl('rtl', 'ltr') }}">
+<div class="card"
+    dir="{{ dashboard_rtl('rtl', 'ltr') }}"
+    {{ $attributes }}>
     @isset($header)
         <div @class([
             "card-header
-                    bg-" . $attributes->get('header-bg'),
+                            bg-" . $attributes->get('header-bg'),
             // "text-white" => in_array($attributes->get('header-bg', 'gray-200'), ['primary'])
         ])>
             {!! $header !!}
         </div>
     @endisset
 
-    {!! $slot !!}
+    <div class="p-5">
+        {!! $slot !!}
+    </div>
 
     @isset($footer)
         <div class="card-footer bg-{{ $attributes->get('footer-bg') }}">

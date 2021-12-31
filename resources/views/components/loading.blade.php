@@ -5,11 +5,14 @@
 
 <div
     {{ $attributes->merge([
-    'class' => 'd-flex text-center w-full bg-white',
-    'style' => 'height:200px;',
-]) }}>
-    <img src="{{ asset('assets/dashboard/cleopatra/img/loader-2.svg') }}"
-        alt="Loading">
+        'class' => 'd-flex text-center w-full bg-white',
+        'style' => 'height:200px;',
+    ]) }}>
+    <h1 class="h1">
+        Loading
+    </h1>
+    {{-- <img src="{{ asset('assets/dashboard/cleopatra/img/loader-2.svg') }}"
+        alt="Loading"> --}}
 </div>
 
 @if ($attributes->get('livewire'))
