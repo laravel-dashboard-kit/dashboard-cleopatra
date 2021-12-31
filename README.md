@@ -1,1 +1,1 @@
-# LDK cleopatra theme base on [cleopatra](https://github.com/moesaid/cleopatra)
+# LDK cleopatra theme based on [cleopatra](https://github.com/moesaid/cleopatra)
