@@ -1240,6 +1240,12 @@ div.code-toolbar .toolbar button:hover {
 .mt-5{
   margin-top: 1.25rem;
 }
+.-ml-1{
+  margin-left: -0.25rem;
+}
+.mr-3{
+  margin-right: 0.75rem;
+}
 .mb-4{
   margin-bottom: 1rem;
 }
@@ -1254,9 +1260,6 @@ div.code-toolbar .toolbar button:hover {
 }
 .mr-5{
   margin-right: 1.25rem;
-}
-.mr-3{
-  margin-right: 0.75rem;
 }
 .mt-2{
   margin-top: 0.5rem;
@@ -1351,6 +1354,9 @@ div.code-toolbar .toolbar button:hover {
 .h-full{
   height: 100%;
 }
+.h-5{
+  height: 1.25rem;
+}
 .h-screen{
   height: 100vh;
 }
@@ -1372,9 +1378,6 @@ div.code-toolbar .toolbar button:hover {
 .h-3{
   height: 0.75rem;
 }
-.h-5{
-  height: 1.25rem;
-}
 .h-40{
   height: 10rem;
 }
@@ -1389,6 +1392,9 @@ div.code-toolbar .toolbar button:hover {
 }
 .w-84{
   width: 21rem;
+}
+.w-5{
+  width: 1.25rem;
 }
 .w-56{
   width: 14rem;
@@ -1419,9 +1425,6 @@ div.code-toolbar .toolbar button:hover {
 }
 .w-96{
   width: 24rem;
-}
-.w-5{
-  width: 1.25rem;
 }
 .w-1\/2{
   width: 50%;
@@ -1455,6 +1458,20 @@ div.code-toolbar .toolbar button:hover {
 }
 .transform{
   transform: var(--tw-transform);
+}
+@-webkit-keyframes spin{
+  to{
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin{
+  to{
+    transform: rotate(360deg);
+  }
+}
+.animate-spin{
+  -webkit-animation: spin 1s linear infinite;
+          animation: spin 1s linear infinite;
 }
 .cursor-pointer{
   cursor: pointer;
@@ -1636,6 +1653,10 @@ div.code-toolbar .toolbar button:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
+.bg-indigo-600{
+  --tw-bg-opacity: 1;
+  background-color: rgb(79 70 229 / var(--tw-bg-opacity));
+}
 .bg-gray-100{
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
@@ -1704,10 +1725,6 @@ div.code-toolbar .toolbar button:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(199 210 254 / var(--tw-bg-opacity));
 }
-.bg-indigo-600{
-  --tw-bg-opacity: 1;
-  background-color: rgb(79 70 229 / var(--tw-bg-opacity));
-}
 .bg-green-600{
   --tw-bg-opacity: 1;
   background-color: rgb(22 163 74 / var(--tw-bg-opacity));
@@ -1738,11 +1755,11 @@ div.code-toolbar .toolbar button:hover {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.p-0{
-  padding: 0px;
-}
 .p-5{
   padding: 1.25rem;
+}
+.p-0{
+  padding: 0px;
 }
 .p-6{
   padding: 1.5rem;
@@ -2031,6 +2048,12 @@ div.code-toolbar .toolbar button:hover {
 .text-red-400{
   --tw-text-opacity: 1;
   color: rgb(248 113 113 / var(--tw-text-opacity));
+}
+.opacity-25{
+  opacity: 0.25;
+}
+.opacity-75{
+  opacity: 0.75;
 }
 .shadow-md{
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);

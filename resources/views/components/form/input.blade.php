@@ -1,3 +1,8 @@
+@props([
+    'type' => 'text',
+    'initPreview' => 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==',
+])
+
 @php
 $id = Str::of($attributes->get('name', null) . \Str::random(10))->slug();
 $inline_inputs = ['color', 'checkbox'];
@@ -7,7 +12,7 @@ $inline_inputs = ['color', 'checkbox'];
 {{-- $attributes->get('inset') --}}
 <div @class([
     'px-4 my-6 w-full',
-    'flex items-center gap-2' => in_array($attributes->get('type'), $inline_inputs),
+    'flex items-center gap-2' => in_array($type, $inline_inputs),
 ])
     dir="{{ dashboard_rtl('rtl', 'ltr') }}">
 
@@ -32,19 +37,38 @@ $inline_inputs = ['color', 'checkbox'];
             </div>
         @endif
 
+        @if ($type == 'image')
+            <x-dashboard-loading livewire />
+
+            <div wire:loading.remove>
+                <img src="{{ $initPreview }}"
+                    class="w-full">
+            </div>
+
+            <div wire:loading>
+                <img class="w-full"
+                    id="{{ $id }}_preview">
+            </div>
+        @endif
+
         <input
             {{ $attributes->except(['class', 'value'])->merge([
-                'type' => 'text',
+                'type' => $type == 'image' ? 'file' : $type,
                 'id' => $id,
                 'placeholder' => $slot,
                 'value' => is_string($attributes->get('name')) && strlen(old($attributes->get('name'))) > 0 ? old($attributes->get('name')) : $attributes->get('value'),
             ]) }}
             @class([
-                'block rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50',
+                'block rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 ' .
+                    $attributes['class'] ??
+                '',
                 'border-gray-300' => !$errors->has($attributes->get('name')),
                 'border-red-500' => $errors->has($attributes->get('name')),
-                'w-full' => !in_array($attributes->get('type'), $inline_inputs),
-            ]) />
+                'w-full' => !in_array($type, $inline_inputs),
+            ])
+            {{ Arr::toCssClasses([
+                'wire:loading.remove' => $type == 'image',
+            ]) }} />
 
         @isset($after)
             <div class="">
@@ -73,3 +97,24 @@ $inline_inputs = ['color', 'checkbox'];
         </div>
     @enderror
 </div>
+
+@if ($type == 'image')
+    @push('scripts')
+        <script>
+            var input = document.getElementById('{{ $id }}');
+
+            input.onchange = function(event) {
+                if (event.target.files.length > 0) {
+                    document.getElementById('{{ $id }}_preview').src = URL.createObjectURL(event.target.files[0])
+                }
+            }
+
+            input.onload = function(event) {
+                console.log(event)
+                if (event.target.files.length > 0) {
+                    document.getElementById('{{ $id }}_preview').src = URL.createObjectURL(event.target.files[0])
+                }
+            }
+        </script>
+    @endpush
+@endif
