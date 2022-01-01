@@ -9,9 +9,15 @@ $tabs = array_combine(
 );
 @endphp
 
-<x-dashboard-card x-cloak x-data="{
-    activeTab: '{{ array_key_first($tabs) }}'
-}">
+<x-dashboard-card x-cloak
+    x-data="{
+    activeTab: (new URL(window.location.href)).searchParams.get('activeTab') ?? '{{ array_key_first($tabs) }}'
+}"
+    x-init="$watch('activeTab', (value) => {
+    const url = new URL(window.location.href);
+    url.searchParams.set('activeTab', value);
+    history.pushState(null, document.title, url.toString());
+})">
     <x-slot name="header">
         <x-dashboard-flex x="start"
             class="gap-2">
