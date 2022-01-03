@@ -1366,11 +1366,11 @@ div.code-toolbar .toolbar button:hover {
 .h-10{
   height: 2.5rem;
 }
-.h-4{
-  height: 1rem;
-}
 .h-12{
   height: 3rem;
+}
+.h-4{
+  height: 1rem;
 }
 .h-6{
   height: 1.5rem;
@@ -1410,6 +1410,9 @@ div.code-toolbar .toolbar button:hover {
 }
 .w-64{
   width: 16rem;
+}
+.w-12{
+  width: 3rem;
 }
 .w-4{
   width: 1rem;

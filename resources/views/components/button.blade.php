@@ -1,10 +1,10 @@
 @php
-$class = '';
+$class = $attributes->get('class', '') . ' ';
 
 if ($attributes->get('disabled')) {
-    $class = 'disabled btn-gray';
+    $class .= 'disabled btn-gray';
 } else {
-    $class = $attributes->get('color') ? 'btn-' . $attributes->get('color') : 'btn';
+    $class .= $attributes->get('color') ? 'btn-' . $attributes->get('color') : 'btn';
 }
 @endphp
 
@@ -13,7 +13,8 @@ if ($attributes->get('disabled')) {
         'href' => '#',
     ]) }}
         @class([$class])>
-        <x-dashboard-flex class="gap-1">
+        <x-dashboard-flex class="gap-1"
+            x="center">
             {!! $slot ?? __('Click') !!}
         </x-dashboard-flex>
     </a>
@@ -22,7 +23,8 @@ if ($attributes->get('disabled')) {
         'type' => 'button',
     ]) }}
         @class([$class])>
-        <x-dashboard-flex class="gap-1">
+        <x-dashboard-flex class="gap-1"
+            x="center">
             {!! $slot ?? __('Click') !!}
         </x-dashboard-flex>
     </button>
