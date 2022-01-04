@@ -4,7 +4,7 @@ module.exports = {
     "./resources/html/**/*.html",
     "./resources/**/.*js",
   ],
-  safelist: ["lg:w-96"],
+  safelist: ["lg:w-96", "max-w-5xl", "ring-indigo-500"],
   theme: {
     screens: {
       sm: { max: "639px" },
@@ -32,7 +32,7 @@ module.exports = {
     },
   },
   plugins: [
-    require('@tailwindcss/forms'),
+    require("@tailwindcss/forms"),
     require("tailwindcss-animatecss")({
       settings: {
         animatedSpeed: 1000,
