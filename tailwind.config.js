@@ -4,7 +4,14 @@ module.exports = {
     "./resources/html/**/*.html",
     "./resources/**/.*js",
   ],
-  safelist: ["lg:w-96", "max-w-5xl", "ring-indigo-500"],
+  safelist: [
+    "lg:w-96",
+    "max-w-5xl",
+    "ring-indigo-500",
+    {
+      pattern: /p(|x|y)-(0|3|5|10)/,
+    },
+  ],
   theme: {
     screens: {
       sm: { max: "639px" },
