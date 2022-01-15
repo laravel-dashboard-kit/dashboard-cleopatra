@@ -1,4 +1,4 @@
-@props(['items', 'label', 'selected', 'limit'])
+@props(['items', 'label', 'selected' => [], 'limit'])
 
 @php
 $id = \Str::of($attributes->get('name', null) . \Str::random(10))->slug();
@@ -27,8 +27,10 @@ $id = \Str::of($attributes->get('name', null) . \Str::random(10))->slug();
         ])>
         @isset($items)
             @foreach ($items as $value => $item)
-                <option value="{{ $value }}"
-                    {{ $selected == $value ? 'selected' : '' }}>{{ $item }}</option>
+                <option {{ (is_array($selected) ? in_array($value, $selected) : $selected == $value) ? 'selected' : '' }}
+                    value="{{ $value }}">
+                    {{ $item }}
+                </option>
             @endforeach
         @else
             {!! $slot !!}
