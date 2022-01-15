@@ -1,3 +1,5 @@
+@props(['inset' => false])
+
 @php
 $classes = 'card';
 $card_body_classes = 'card-body';
@@ -27,14 +29,16 @@ if (isset($footer)) {
     @isset($header)
         <div @class([
             "card-header
-                            bg-" . $attributes->get('header-bg'),
+                                            bg-" . $attributes->get('header-bg'),
             // "text-white" => in_array($attributes->get('header-bg', 'gray-200'), ['primary'])
         ])>
             {!! $header !!}
         </div>
     @endisset
 
-    <div class="p-5">
+    <div @class([
+        'p-5' => !$inset,
+    ])>
         {!! $slot !!}
     </div>
 

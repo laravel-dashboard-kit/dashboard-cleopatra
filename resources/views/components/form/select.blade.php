@@ -1,4 +1,4 @@
-@props(['items', 'label', 'selected'])
+@props(['items', 'label', 'selected', 'limit'])
 
 @php
 $id = \Str::of($attributes->get('name', null) . \Str::random(10))->slug();

@@ -1,4 +1,4 @@
-<x-dashboard-card>
+<x-dashboard-card :inset="true">
     {{-- Table header --}}
     @if ($attributes->get('title') || $attributes->get('subtitle') || isset($cardHeader))
         <x-slot name="header">
