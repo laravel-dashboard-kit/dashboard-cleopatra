@@ -76,10 +76,13 @@
                     </div>
                 </x-slot>
 
+                @isset($navbarEnd)
+                    {!! $navbarEnd !!}
+                @endisset
+
                 <x-dashboard-dropdown-item :hideHr="true"
                     onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
-                    <i class="fad fa-user-times text-xs {{ dashboard_rtl('ml-1', 'mr-1') }}"></i>
                     {{ __('Logout') }}
                 </x-dashboard-dropdown-item>
             </x-dashboard-dropdown>

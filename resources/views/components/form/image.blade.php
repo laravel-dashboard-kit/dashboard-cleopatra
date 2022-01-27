@@ -39,11 +39,13 @@
         type="hidden"
         name="delete_{{ $name }}">
 
-    @error($attributes->get('name'))
-        <div class="text-red-500">
-            {{ $message }}
-        </div>
-    @enderror
+    @if ($attributes->get('name'))
+        @error($attributes->get('name'))
+            <div class="text-red-500">
+                {{ $message }}
+            </div>
+        @enderror
+    @endif
 </div>
 
 @push('scripts')
