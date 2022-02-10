@@ -16,7 +16,6 @@ class DashboardCleopatraServiceProvider extends ServiceProvider
     {
         Paginator::useBootstrap();
 
-        $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
         $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'dashboard-cleopatra');
     }
 }
