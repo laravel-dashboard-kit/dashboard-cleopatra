@@ -3,6 +3,9 @@
   &:hover {
     @apply opacity-75;
   }
+  &.disabled {
+    @apply opacity-75 cursor-not-allowed;
+  }
 }
 
 @include color("btn");

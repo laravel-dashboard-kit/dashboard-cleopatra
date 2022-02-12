@@ -22,14 +22,14 @@ $tabs = array_combine(
         <x-dashboard-flex x="start"
             class="gap-2">
             @foreach ($tabs as $id => $tab)
-                <x-dashboard-button
+                <x-dashboard::button
                     x-bind:class="{
                     'btn btn-gray': activeTab != '{{ $id }}',
                     'btn-shadow': activeTab == '{{ $id }}'
                 }"
                     @click="activeTab = '{{ $id }}'">
                     {{ $tab }}
-                </x-dashboard-button>
+                </x-dashboard::button>
             @endforeach
         </x-dashboard-flex>
     </x-slot>

@@ -825,6 +825,9 @@ p {
 .btn:hover {
   opacity: 0.75;
 }
+.btn.disabled {
+  opacity: 0.75;
+}
 .btn-primary {
   --tw-bg-opacity: 1;
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
@@ -839,7 +842,7 @@ p {
 }
 .btn-success {
   --tw-bg-opacity: 1;
-  background-color: rgb(74 222 128 / var(--tw-bg-opacity));
+  background-color: rgb(22 163 74 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
@@ -863,7 +866,7 @@ p {
 }
 .btn-default {
   --tw-bg-opacity: 1;
-  background-color: rgb(125 211 252 / var(--tw-bg-opacity));
+  background-color: rgb(186 230 253 / var(--tw-bg-opacity));
 }
 .btn-dark {
   --tw-bg-opacity: 1;
@@ -899,7 +902,7 @@ p {
 }
 .badge-success {
   --tw-bg-opacity: 1;
-  background-color: rgb(74 222 128 / var(--tw-bg-opacity));
+  background-color: rgb(22 163 74 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
@@ -923,7 +926,7 @@ p {
 }
 .badge-default {
   --tw-bg-opacity: 1;
-  background-color: rgb(125 211 252 / var(--tw-bg-opacity));
+  background-color: rgb(186 230 253 / var(--tw-bg-opacity));
 }
 .badge-dark {
   --tw-bg-opacity: 1;
@@ -1674,9 +1677,6 @@ p {
 }
 .gap-3\.5 {
   gap: 0.875rem;
-}
-.gap-1 {
-  gap: 0.25rem;
 }
 .gap-2 {
   gap: 0.5rem;

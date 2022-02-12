@@ -13,7 +13,7 @@
     @endunless
 
     <div>
-        <x-dashboard-button class="absolute rounded-full w-10 h-10 p-0"
+        <x-dashboard::button class="absolute rounded-full w-10 h-10 p-0"
             color="bs-danger"
             id="{{ $id }}_delete_btn"
             style="display: none;"

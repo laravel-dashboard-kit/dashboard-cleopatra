@@ -1,4 +1,4 @@
-<x-dashboard-button {{ $attributes->merge([
+<x-dashboard::button {{ $attributes->merge([
     'href' => '#',
     'color' => 'danger',
 ]) }}>
@@ -7,4 +7,4 @@
     @else
         عودة
     @endif
-</x-dashboard-button>
+</x-dashboard::button>
