@@ -1,5 +1,13 @@
+@import "mixins/color";
+
 @import "apply/_typography";
 @import "apply/_card";
 @import "apply/_button";
 @import "apply/_badge";
 @import "apply/_alert";
+
+.menu-overflow {
+  &:focus {
+    outline: none;
+  }
+}

@@ -1,0 +1,7 @@
+@mixin color($base) {
+  @each $name, $classes in $colors {
+    .#{$base}-#{$name} {
+      @apply #{$classes};
+    }
+  }
+}

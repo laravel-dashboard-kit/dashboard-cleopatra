@@ -1,8 +1,5 @@
 .badge {
-  padding: 2px 0;
-  @apply px-2;
+  @apply px-2 py-1 rounded lowercase;
 }
 
-.badge-primary {
-  @apply bg-teal-200 border border-teal-300 text-teal-600 rounded lowercase;
-}
+@include color("badge");

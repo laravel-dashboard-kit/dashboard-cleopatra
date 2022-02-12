@@ -1,10 +1,13 @@
+@props(['color' => 'default'])
+
 @php
-$class = $attributes->get('class', '') . ' ';
+
+$class = 'btn ' . $attributes->get('class', '');
 
 if ($attributes->get('disabled')) {
-    $class .= 'disabled btn-gray';
+    $class .= ' disabled btn-gray';
 } else {
-    $class .= $attributes->get('color') ? 'btn-' . $attributes->get('color') : 'btn';
+    $class .= " btn-${color}";
 }
 @endphp
 
