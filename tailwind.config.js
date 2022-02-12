@@ -1,3 +1,5 @@
+const colors = require("tailwindcss/colors");
+
 module.exports = {
   content: [
     "./resources/views/**/*.php",
@@ -13,6 +15,9 @@ module.exports = {
     },
   ],
   theme: {
+    colors: {
+      ...colors,
+    },
     screens: {
       sm: { max: "639px" },
       md: { max: "767px" },
@@ -20,7 +25,7 @@ module.exports = {
       xl: { max: "1279px" },
     },
     fontFamily: {
-      sans: ["Ubuntu", "Sans-serif"],
+      sans: ["Sans-serif"],
     },
     extend: {
       spacing: {

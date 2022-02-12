@@ -1,0 +1,48 @@
+.btn {
+  @apply text-center block py-2 px-5 rounded transition-all ease-in-out duration-300;
+  &:hover {
+    @apply opacity-75;
+  }
+}
+
+.btn-primary {
+  @apply bg-indigo-600 text-white;
+}
+
+.btn-secondary {
+  @apply bg-gray-200 border border-gray-300;
+  &:hover {
+    @apply bg-white text-gray-800 border border-gray-300;
+  }
+}
+
+.btn-success {
+  @apply bg-green-500 text-white;
+}
+
+.btn-danger {
+  @apply bg-red-500 text-white;
+}
+
+.btn-warning {
+  @apply bg-amber-500 text-white;
+}
+
+.btn-info {
+  @apply bg-yellow-500 text-white;
+}
+
+.btn-dark {
+  @apply bg-slate-900 text-white;
+}
+
+.btn-light {
+  @apply bg-slate-200;
+}
+
+// overflow
+.menu-overflow {
+  &:focus {
+    outline: none;
+  }
+}

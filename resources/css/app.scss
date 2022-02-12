@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+
+// external
+@import "./external/prism";
+
+// apply
+@import "apply";
+
+// index
+@import "index/report-card";
+
+@tailwind utilities;
