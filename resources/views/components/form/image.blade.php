@@ -14,7 +14,7 @@
 
     <div>
         <x-dashboard::button class="absolute rounded-full w-10 h-10 p-0"
-            color="bs-danger"
+            color="danger"
             id="{{ $id }}_delete_btn"
             style="display: none;"
             onclick="document.getElementById('{{ $id }}_delete').value = true;document.getElementById('{{ $id }}_preview').parentElement.style.display = 'none'">
