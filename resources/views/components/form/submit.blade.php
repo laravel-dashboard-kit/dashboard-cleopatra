@@ -1,4 +1,5 @@
-@props(['dontNotify' => false])
+@props(['dontNotify' => false, 'color' => 'success'])
+
 @php
 if (!$dontNotify) {
     $tmpId = json_encode([
@@ -9,10 +10,10 @@ if (!$dontNotify) {
 }
 @endphp
 
-<x-dashboard::button {{ $attributes->merge([
-    'type' => 'submit',
-    'color' => 'indigo',
-]) }}
+<x-dashboard::button :color="$color"
+    {{ $attributes->merge([
+        'type' => 'submit',
+    ]) }}
     onclick="{{ $dontNotify ? '' : 'SwalAlert(' . $tmpId . ')' }}">
     @if (strlen($slot) > 0)
         {!! $slot !!}
