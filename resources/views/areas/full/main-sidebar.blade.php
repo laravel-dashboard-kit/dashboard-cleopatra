@@ -100,15 +100,6 @@
         </a>
         {{-- end link --}}
 
-
-        {{-- link --}}
-        <a href="./buttons.html"
-            class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-            <i class="fad fa-cricket text-xs mr-2"></i>
-            buttons
-        </a>
-        {{-- end link --}}
-
         {{-- link --}}
         <a href="#"
             class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
@@ -157,90 +148,33 @@
         </a>
         {{-- end link --}}
 
-
-
+        @foreach (config('dashboard-ui.nav') as $parent)
+            @if (isset($parent['items']) && is_array($parent['items']))
+                <x-dashboard-dropdown :title="__($parent['title'])"
+                    :active="count(array_filter(Arr::pluck($parent['items'], 'active'))) > 0">
+                    @foreach ($parent['items'] ?? [] as $child)
+                        <x-dashboard-dropdown-item :href="$child['url']"
+                            :active="$child['active'] ?? false"
+                            :hideHr="$loop->last">
+                            {{ __($child['title']) }}
+                        </x-dashboard-dropdown-item>
+                    @endforeach
+                </x-dashboard-dropdown>
+            @else
+                <a href="{{ $parent['url'] }}"
+                    @class([
+                        'menu-btn p-0 m-0 focus:outline-none transition-all ease-in-out duration-300 flex align-center gap-2  hover:text-teal-600 focus:text-teal-900',
+                        'text-teal-700' => isset($parent['active']) && $parent['active'],
+                        'mb-3' => !$loop->last,
+                    ])>
+                    @isset($parent['icon'])
+                        @svg($parent['icon'])
+                    @endisset
+                    <span>{{ __($parent['title']) }}</span>
+                </a>
+            @endif
+        @endforeach
     </div>
     {{-- end sidebar content --}}
 
 </div>
-{{-- end sidbar --}}
-
-
-
-
-{{-- TO USE LATER --}}
-{{-- <a href="{{ config('dashboard-ui.url.home') }}">
-<img src="{{ config('dashboard-ui.logo.default') }}"
-    width="150"
-    height="150">
-</a> --}}
-{{-- <a href="{{ config('dashboard-ui.url.home') }}">
-    <img src="{{ config('dashboard-ui.logo.small') }}"
-        width="20"
-        height="20"> --}}
-{{-- <li class="{{ $activePage == 'home' ? 'active' : '' }}"> --}}
-
-{{-- @foreach (config('dashboard-ui.nav') as $parent)
-@if (isset($parent['type']) && $parent['type'] == 'divider')
-    <li>
-        <h3>{{ __($parent['title']) }}</h3>
-    </li>
-@else
-    @if (isset($parent['items']) && is_array($parent['items']))
-        <li class="dropdown">
-            <a class="nav-link has-dropdown"
-                href="javascript:void(0);">
-                @isset($parent['icon'])
-                    @svg($parent['icon'], ['class' => $parent['icon_color'] ?? ""])
-                @endisset
-                <span>{{ __($parent['title']) }}</span>
-            </a>
-            <ul class="dropdown-menu"
-                style="display: none;">
-                @foreach ($parent['items'] ?? [] as $child)
-                    @if (isset($child['items']) && is_array($child['items']))
-                        <li class="sub-slide">
-                            <a class="sub-side-menu__item"
-                                data-toggle="sub-slide"
-                                href="#">
-                                <span class="sub-side-menu__label">{{ __($child['title']) }}</span><i
-                                    class="sub-angle fe fe-chevron-left"></i>
-                            </a>
-                            <ul class="sub-slide-menu">
-                                @foreach ($child['items'] as $subitem)
-                                    <li>
-                                        <a class="sub-slide-item"
-                                            href="{{ $subitem['url'] }}">{{ __($subitem['title']) }}</a>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </li>
-                    @else
-                        <li>
-                            <a href="{{ $child['url'] }}">{{ __($child['title']) }}</a>
-                        </li>
-                    @endif
-                @endforeach
-            </ul>
-        </li>
-    @else
-        <li>
-            <a class="nav-link"
-                href="{{ $parent['url'] }}">
-                @svg($parent['icon'], ['class' => $parent['icon_color'] ?? ""])
-                <span>{{ __($parent['title']) }}</span>
-            </a>
-        </li>
-    @endif
-@endif
-@endforeach --}}
-{{-- Translation link --}}
-{{-- @if (config('dashboard-ui.translation.enabled') && !config('dashboard-ui.translation.hide_from_menu'))
-<li>
-    <a class="nav-link"
-        href="/{{ config('translation.ui_url') }}">
-        @svg('ri-translate-2', ['class' => "text-primary"])
-        <span>{{ __('translation::translation.translations') }}</span>
-    </a>
-</li>
-@endif --}}
