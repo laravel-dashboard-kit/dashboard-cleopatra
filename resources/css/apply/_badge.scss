@@ -1,7 +1,11 @@
 .badge {
   padding-top: 2px;
   padding-bottom: 2px;
-  @apply px-2 lowercase text-xs font-semibold rounded-full;
+  @apply px-2 text-xs;
+}
+
+.badge-pill {
+  @apply rounded-full;
 }
 
 @include color("badge");

@@ -884,13 +884,13 @@ p {
 .badge {
   padding-top: 2px;
   padding-bottom: 2px;
-  border-radius: 9999px;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   font-size: 0.75rem;
-  line-height: 1rem;
-  font-weight: 600;
-  text-transform: lowercase; }
+  line-height: 1rem; }
+.badge-pill {
+  border-radius: 9999px;
+}
 .badge-primary {
   --tw-bg-opacity: 1;
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
