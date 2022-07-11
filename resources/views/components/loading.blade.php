@@ -3,7 +3,7 @@
         class="w-full">
 @endif
 
-<x-dashboard-flex {{ $attributes->merge([
+<x-dashboard::flex {{ $attributes->merge([
     'class' => 'text-center text-white w-full bg-indigo-600',
 ]) }}
     x="center"
@@ -24,7 +24,7 @@
         </path>
     </svg>
     Processing...
-</x-dashboard-flex>
+</x-dashboard::flex>
 
 @if ($attributes->get('livewire'))
     </div>

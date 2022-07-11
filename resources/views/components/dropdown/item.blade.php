@@ -1,5 +1,3 @@
-@props(['hideHr' => false])
-
 <a {{ $attributes->except('class')->merge([
     'href' => $attributes->get('href', 'javascript:void(0);'),
 ]) }}

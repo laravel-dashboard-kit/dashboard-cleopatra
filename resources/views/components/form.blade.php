@@ -1,5 +1,3 @@
-@props(['confirm' => false])
-
 <form
     {{ $attributes->except(['method'])->merge([
         'action' => '#',

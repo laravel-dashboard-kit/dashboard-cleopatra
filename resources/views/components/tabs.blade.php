@@ -19,7 +19,7 @@ $tabs = array_combine(
     history.pushState(null, document.title, url.toString());
 })">
     <x-slot name="header">
-        <x-dashboard-flex x="start"
+        <x-dashboard::flex x="start"
             class="gap-2">
             @foreach ($tabs as $id => $tab)
                 <x-dashboard::button color="secondary"
@@ -31,7 +31,7 @@ $tabs = array_combine(
                     {{ $tab }}
                 </x-dashboard::button>
             @endforeach
-        </x-dashboard-flex>
+        </x-dashboard::flex>
     </x-slot>
 
     {!! $slot !!}
