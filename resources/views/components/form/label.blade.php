@@ -6,7 +6,7 @@
         ])>
         {!! $slot !!}:
 
-        @if ($attributes->get('required', false))
+        @if ($attributes->get('required', $required ?? false))
             <span class="text-red-500">*</span>
         @endif
     </label>

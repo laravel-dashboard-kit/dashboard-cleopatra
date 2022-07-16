@@ -829,6 +829,9 @@ p {
   cursor: not-allowed;
   opacity: 0.75;
 }
+.btn-inline {
+  display: inline-block;
+}
 .btn-primary {
   --tw-bg-opacity: 1;
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));

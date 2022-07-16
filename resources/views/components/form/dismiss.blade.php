@@ -1,6 +1,5 @@
-<x-dashboard::button {{ $attributes->merge([
+<x-dashboard::button :color="$color" :inline="true" {{ $attributes->merge([
     'href' => '#',
-    'color' => 'danger',
 ]) }}>
     @if (strlen($slot) > 0)
         {!! $slot !!}

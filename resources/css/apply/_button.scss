@@ -8,4 +8,8 @@
   }
 }
 
+.btn-inline {
+  @apply inline-block;
+}
+
 @include color("btn");

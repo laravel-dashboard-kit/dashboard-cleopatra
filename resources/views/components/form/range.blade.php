@@ -8,10 +8,10 @@ $id = $attributes->get('name', null) . \Str::random(10);
             <div class="offset-6 col-6">
                 <div class="text-end">
                     <h3 class="my-1">
-                        <span id="{{ $id }}_range_value">{{ $attributes->get('min', 1) }}</span>
+                        <span id="{{ $id }}_range_value">{{ $attributes->get('value', $attributes->get('min', 1)) }}</span>
                         <span>{{ $attributes->get('range-unit') }}</span>
                     </h3>
-                    <label for="{{ $id }}"E
+                    <label for="{{ $id }}"
                         class="text-muted mb-1 text-truncate">{!! $slot !!}</label>
                 </div>
             </div>

@@ -1,11 +1,3 @@
-@props([
-'name',
-'previewSrc' =>
-'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==',
-'id' => Str::slug(uniqid($name)),
-'hideLabel' => false,
-])
-
 <div dir="{{ dashboard_rtl('rtl', 'ltr') }}"
     @class(['px-4 my-6 ' . $attributes['class']])>
     @unless($hideLabel)
