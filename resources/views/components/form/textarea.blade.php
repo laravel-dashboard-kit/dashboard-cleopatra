@@ -2,10 +2,10 @@
 $id = $attributes->get('name', null) . \Str::random(10);
 @endphp
 
-<div @class(['px-4 my-6 w-full'])
+<div @class(['my-6 w-full'])
     dir="{{ dashboard_rtl('rtl', 'ltr') }}">
 
-    @unless($attributes->get('hide-label'))
+    @unless($hideLabel)
         @include('dashboard-cleopatra::components.form.label')
     @endunless
 
@@ -28,7 +28,7 @@ $id = $attributes->get('name', null) . \Str::random(10);
     @enderror
 </div>
 
-@if ($attributes->has('ckeditor'))
+@if ($ckeditor)
     @push('scripts')
         <script>
             CKEDITOR.replace("{{ $id }}");
@@ -39,7 +39,7 @@ $id = $attributes->get('name', null) . \Str::random(10);
             CKEDITOR.config.allowedContent = true;
             CKEDITOR.config.extraAllowedContent = 'p(mso*,Normal)';
             CKEDITOR.config.pasteFilter = null;
-            CKEDITOR.config.filebrowserUploadUrl = "{{ route('tenant.dashboard.upload') }}";
+            CKEDITOR.config.filebrowserUploadUrl = "{{ Route::has('tenant.dashboard.upload') ? route('tenant.dashboard.upload') : '' }}";
         </script>
     @endpush
 @endif

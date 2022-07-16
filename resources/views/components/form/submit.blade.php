@@ -1,5 +1,3 @@
-@props(['dontNotify' => false, 'color' => 'success'])
-
 @php
 if (!$dontNotify) {
     $tmpId = json_encode([
