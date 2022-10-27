@@ -1,16 +1,14 @@
 const { src, dest, task, watch, series, parallel } = require("gulp");
 const options = require("./package.json").options;
 const browserSync = require("browser-sync").create();
-const sass = require("gulp-sass");
+const sass = require("gulp-sass")(require("sass"));
 const concat = require("gulp-concat");
 const postcss = require("gulp-postcss");
 const purify = require("gulp-purifycss");
 const uglify = require("gulp-uglify");
-const imagemin = require("gulp-imagemin");
 const cleanCSS = require("gulp-clean-css");
 const del = require("del");
 const logSymbols = require("log-symbols");
-const markdown = require("gulp-markdown");
 const fileinclude = require("gulp-file-include");
 const cache = require("gulp-cache");
 
@@ -46,10 +44,6 @@ task("build-html", () => {
   return src(options.paths.src.base + "/views/*.html")
     .pipe(fileinclude({ prefix: "@" }))
     .pipe(dest(options.paths.build.base));
-});
-
-task("readme", () => {
-  return src("README.md").pipe(markdown()).pipe(dest(options.paths.dist.base));
 });
 
 //Compiling styles
@@ -103,9 +97,7 @@ task("dev-imgs", (done) => {
 });
 
 task("build-imgs", (done) => {
-  src(options.paths.src.img + "/**/*")
-    .pipe(imagemin())
-    .pipe(dest(options.paths.build.img));
+  src(options.paths.src.img + "/**/*").pipe(dest(options.paths.build.img));
   done();
 });
 
