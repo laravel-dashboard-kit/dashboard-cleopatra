@@ -10,9 +10,12 @@ module.exports = {
     "lg:w-96",
     "max-w-5xl",
     "ring-indigo-500",
-    "gird-rows-2",
+    "container",
     {
-      pattern: /p(|x|y)-(0|3|5|10)/,
+      pattern: /p(|x|y)-(0|3|5|10)/, //padding
+    },
+    {
+      pattern: /grid-(rows|cols)-(\d+)/, //grid cols and rows
     },
   ],
   theme: {
