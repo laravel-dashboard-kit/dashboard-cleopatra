@@ -1,7 +1,7 @@
 @extends('dashboard-cleopatra::app')
 
-@section('body')
+@push('body')
     <body class="bg-gray-100">
         {!! $slot !!}
     </body>
-@endsection
+@endpush

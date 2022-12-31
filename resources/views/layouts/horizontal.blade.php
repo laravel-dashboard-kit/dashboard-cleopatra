@@ -1,6 +1,6 @@
 @extends('dashboard-cleopatra::app')
 
-@section('body')
+@push('body')
 
     <body class="bg-gray-100">
         @include('dashboard-cleopatra::areas.horizontal.main-header')
@@ -15,4 +15,4 @@
 
         @include('dashboard-cleopatra::partials.footer')
     </body>
-@endsection
+@endpush
