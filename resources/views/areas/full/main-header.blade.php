@@ -12,7 +12,7 @@ height="150">
 <img src="{{ config('dashboard-ui.logo.small') }}"
     width="20"
     height="20"> --}}
-        <img src="img/logo.png"
+        <img src="{{ asset('dashboard/img/logo.png') }}"
             class="w-10 flex-none">
         <strong class="capitalize ml-1 flex-1">cleopatra</strong>
 

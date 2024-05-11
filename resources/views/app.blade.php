@@ -11,7 +11,7 @@
         href="https://kit-pro.fontawesome.com/releases/v5.12.1/css/pro.min.css">
     <link rel="stylesheet"
         type="text/css"
-        href="{{ asset('assets/dashboard/cleopatra/css/style.css') }}">
+        href="{{ asset('dashboard/cleopatra/css/style.css') }}">
 
     <style>
         select {
