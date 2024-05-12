@@ -1,0 +1,10 @@
+.table-bordered {
+  @apply border;
+}
+
+// @todo
+// @each $name, $classes in $alerts {
+//   .table-#{$name} {
+//     @apply #{$classes};
+//   }
+// }
