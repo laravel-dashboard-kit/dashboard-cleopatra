@@ -23,7 +23,7 @@
                 data-dismiss="alert"
                 aria-label="Close">
                 <span aria-hidden="true">
-                    <x-tabler-x />
+                    <x-ri-close-fill />
                 </span>
             </button>
         @endif
