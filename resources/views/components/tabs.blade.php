@@ -9,7 +9,7 @@ $tabs = array_combine(
 );
 @endphp
 
-<x-dashboard-card x-cloak
+<x-dashboard::card x-cloak
     x-data="{
     activeTab: (new URL(window.location.href)).searchParams.get('activeTab') ?? '{{ array_key_first($tabs) }}'
 }"
@@ -35,4 +35,4 @@ $tabs = array_combine(
     </x-slot>
 
     {!! $slot !!}
-</x-dashboard-card>
+</x-dashboard::card>
